@@ -30,7 +30,7 @@ const updateRequestOptsFnList = [
     (requestOpts, {auth}, userOpts, config) => {
         if (auth !== 'noauth') {
             if (!config.token) {
-                throwError('No "token" specified!');
+                console.error('No "token" specified!');
             }
             requestOpts.headers['Authorization'] = `Bearer ${config.token}`;
         }
